@@ -4,12 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Una página sencilla para practicar despliegues con GitHub y Railway.">
-  <title>Mi primera web</title>
+
+  <meta
+    name="description"
+    content="Una pequeña página llena de palabras y sentimientos."
+  >
+
+  <title>愛 &lt;3</title>
 
   <style>
+
+    /* =========================
+       PALETA DE COLORES
+       ========================= */
+
     :root {
-      /* PALETA DE COLORES */
       --vanilla: #FFF7E6;
       --blush: #F7C8D3;
       --rosewood: #B46A72;
@@ -18,6 +27,11 @@
       --midnight: #2D3A47;
     }
 
+
+    /* =========================
+       CONFIGURACIÓN GENERAL
+       ========================= */
+
     * {
       box-sizing: border-box;
     }
@@ -25,9 +39,12 @@
     body {
       min-height: 100vh;
       margin: 0;
+
       display: grid;
       place-items: center;
+
       padding: 24px;
+
       overflow-x: hidden;
 
       color: var(--midnight);
@@ -47,23 +64,33 @@
           rgba(247, 200, 211, 0.75),
           transparent 32%
         ),
+
         radial-gradient(
           circle at 90% 90%,
           rgba(168, 181, 138, 0.55),
           transparent 32%
         ),
+
         var(--vanilla);
     }
 
-    /* DECORACIONES */
+
+    /* =========================
+       DECORACIONES
+       ========================= */
 
     .decoracion {
       position: fixed;
+
       width: 230px;
       height: 230px;
+
       border-radius: 50%;
+
       filter: blur(2px);
+
       opacity: 0.55;
+
       pointer-events: none;
     }
 
@@ -91,54 +118,79 @@
         );
     }
 
-    /* TARJETA PRINCIPAL */
+
+    /* =========================
+       TARJETA PRINCIPAL
+       ========================= */
 
     main {
       position: relative;
+
       width: min(100%, 780px);
 
       padding: clamp(32px, 7vw, 70px);
 
       text-align: center;
 
-      border: 1px solid rgba(180, 106, 114, 0.25);
+      border:
+        1px solid
+        rgba(180, 106, 114, 0.25);
+
       border-radius: 30px;
 
-      background: rgba(255, 247, 230, 0.88);
+      background:
+        rgba(255, 247, 230, 0.90);
 
       box-shadow:
-        0 24px 70px rgba(45, 58, 71, 0.16);
+        0 24px 70px
+        rgba(45, 58, 71, 0.16);
 
       backdrop-filter: blur(12px);
 
-      animation: aparecer 700ms ease-out both;
+      animation:
+        aparecer 700ms ease-out both;
     }
 
-    /* ETIQUETA */
+
+    /* =========================
+       ETIQUETA
+       ========================= */
 
     .etiqueta {
       display: inline-flex;
+
       align-items: center;
+
       gap: 8px;
 
       margin-bottom: 20px;
+
       padding: 8px 14px;
 
       color: var(--rosewood);
 
       font-size: 0.82rem;
+
       font-weight: 750;
 
       letter-spacing: 0.08em;
+
       text-transform: uppercase;
 
-      border: 1px solid rgba(180, 106, 114, 0.28);
+      border:
+        1px solid
+        rgba(180, 106, 114, 0.28);
+
       border-radius: 999px;
 
-      background: rgba(247, 200, 211, 0.45);
+      background:
+        rgba(247, 200, 211, 0.45);
     }
 
-    /* PUNTO */
+
+    /* =========================
+       PUNTO
+       ========================= */
 
     .punto {
       width: 8px;
@@ -149,19 +201,25 @@
       background: var(--sage);
 
       box-shadow:
-        0 0 0 4px rgba(168, 181, 138, 0.22);
+        0 0 0 4px
+        rgba(168, 181, 138, 0.22);
     }
 
-    /* TITULO */
+
+    /* =========================
+       TITULO
+       ========================= */
 
     h1 {
       margin: 0;
 
       color: var(--midnight);
 
-      font-size: clamp(2.6rem, 9vw, 5.7rem);
+      font-size:
+        clamp(2.6rem, 9vw, 5.7rem);
 
       line-height: 0.95;
+
       letter-spacing: -0.065em;
     }
 
@@ -169,12 +227,15 @@
       color: var(--rosewood);
     }
 
-    /* DESCRIPCION EN CURSIVA */
+
+    /* =========================
+       FRASE PRINCIPAL
+       ========================= */
 
     .descripcion {
       max-width: 560px;
 
-      margin: 24px auto 30px;
+      margin: 24px auto 18px;
 
       color: var(--midnight);
 
@@ -185,12 +246,40 @@
 
       font-style: italic;
 
-      font-size: clamp(1rem, 2.5vw, 1.18rem);
+      font-size:
+        clamp(1rem, 2.5vw, 1.18rem);
 
       line-height: 1.7;
     }
 
-    /* BOTON */
+
+    /* =========================
+       TEXTO PEQUEÑO
+       ========================= */
+
+    .subtexto {
+      max-width: 500px;
+
+      margin: 0 auto 30px;
+
+      color: var(--rosewood);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-style: italic;
+
+      font-size: 0.98rem;
+
+      line-height: 1.6;
+    }
+
+
+    /* =========================
+       BOTÓN
+       ========================= */
 
     button {
       padding: 14px 24px;
@@ -198,9 +287,11 @@
       color: var(--vanilla);
 
       font: inherit;
+
       font-weight: 750;
 
       border: 0;
+
       border-radius: 14px;
 
       background:
@@ -211,7 +302,8 @@
         );
 
       box-shadow:
-        0 12px 24px rgba(45, 58, 71, 0.22);
+        0 12px 24px
+        rgba(45, 58, 71, 0.22);
 
       cursor: pointer;
 
@@ -232,26 +324,94 @@
         );
 
       box-shadow:
-        0 16px 28px rgba(45, 58, 71, 0.28);
+        0 16px 28px
+        rgba(45, 58, 71, 0.28);
     }
 
     button:active {
       transform: translateY(0);
     }
 
-    /* MENSAJE */
+
+    /* =========================
+       MENSAJE SECRETO
+       ========================= */
 
     #mensaje {
-      min-height: 24px;
+      min-height: 55px;
 
-      margin: 18px 0 0;
+      max-width: 560px;
+
+      margin: 25px auto 0;
+
+      padding: 0 10px;
 
       color: var(--rosewood);
 
-      font-weight: 700;
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-style: italic;
+
+      font-size: 1.08rem;
+
+      line-height: 1.6;
+
+      opacity: 0;
+
+      transform:
+        translateY(8px);
+
+      transition:
+        opacity 400ms ease,
+        transform 400ms ease;
     }
 
-    /* FOOTER */
+    #mensaje.mostrar {
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+
+    /* =========================
+       CORAZÓN DECORATIVO
+       ========================= */
+
+    .corazon {
+      display: inline-block;
+
+      margin-top: 12px;
+
+      color: var(--rosewood);
+
+      font-size: 22px;
+
+      opacity: 0;
+
+      transform: scale(0.5);
+
+      transition:
+        opacity 400ms ease,
+        transform 400ms ease;
+    }
+
+    .corazon.mostrar {
+      opacity: 0.8;
+
+      transform: scale(1);
+
+      animation:
+        latido 1.2s ease-in-out infinite;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
 
     footer {
       margin-top: 32px;
@@ -263,7 +423,10 @@
       font-size: 0.86rem;
     }
 
-    /* DETALLES DECORATIVOS */
+
+    /* =========================
+       DETALLES DECORATIVOS
+       ========================= */
 
     main::before {
       content: "✿";
@@ -295,23 +458,49 @@
       opacity: 0.55;
     }
 
-    /* ANIMACION */
+
+    /* =========================
+       ANIMACIONES
+       ========================= */
 
     @keyframes aparecer {
+
       from {
         opacity: 0;
-        transform: translateY(18px);
+
+        transform:
+          translateY(18px);
       }
 
       to {
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+          translateY(0);
       }
+
     }
 
-    /* ACCESIBILIDAD */
+    @keyframes latido {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.18);
+      }
+
+    }
+
+
+    /* =========================
+       ACCESIBILIDAD
+       ========================= */
 
     @media (prefers-reduced-motion: reduce) {
+
       main {
         animation: none;
       }
@@ -319,17 +508,31 @@
       button {
         transition: none;
       }
+
+      #mensaje {
+        transition: none;
+      }
+
+      .corazon {
+        animation: none;
+      }
+
     }
 
-    /* CELULARES */
+
+    /* =========================
+       CELULARES
+       ========================= */
 
     @media (max-width: 600px) {
+
       body {
         padding: 16px;
       }
 
       main {
         padding: 42px 24px;
+
         border-radius: 24px;
       }
 
@@ -346,56 +549,192 @@
       h1 {
         font-size: 3.5rem;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
 
-  <div class="decoracion uno" aria-hidden="true"></div>
-  <div class="decoracion dos" aria-hidden="true"></div>
+  <!-- DECORACIONES -->
+
+  <div
+    class="decoracion uno"
+    aria-hidden="true">
+  </div>
+
+  <div
+    class="decoracion dos"
+    aria-hidden="true">
+  </div>
+
+
+  <!-- CONTENIDO -->
 
   <main>
 
     <div class="etiqueta">
+
       <span class="punto"></span>
-      Sitio publicado
+
+      Un pequeño mensaje
+
     </div>
+
 
     <h1>
       愛<span>&lt;3</span>
     </h1>
 
+
     <p class="descripcion">
+
       "Me perdí en su mirada, no eran ni azules, ni verdes.
       Eran color café, café que quita el sueño,
       café que produce desvelos".
+
     </p>
 
-    <button id="boton" type="button">
-      (＾▽＾)
+
+    <p class="subtexto">
+
+      Hay palabras que se quedan en la mente
+      y miradas que se quedan en el corazón.
+
+    </p>
+
+
+    <button
+      id="boton"
+      type="button">
+
+      ♡ Descubrir ♡
+
     </button>
 
-    <p id="mensaje" aria-live="polite"></p>
+
+    <p
+      id="mensaje"
+      aria-live="polite">
+    </p>
+
+
+    <div
+      id="corazon"
+      class="corazon"
+      aria-hidden="true">
+
+      ♥
+      
+    </div>
+
 
     <footer>
-      Hecho con HTML, CSS y un poquito de JavaScript
+
+      Hecho con HTML, CSS y un poquito de JavaScript ♡
+
     </footer>
 
   </main>
 
+
+  <!-- JAVASCRIPT -->
+
   <script>
-    const boton = document.querySelector("#boton");
-    const mensaje = document.querySelector("#mensaje");
+
+    const boton =
+      document.querySelector("#boton");
+
+    const mensaje =
+      document.querySelector("#mensaje");
+
+    const corazon =
+      document.querySelector("#corazon");
+
+
+    const frases = [
+
+      "A veces una mirada dice mucho más de lo que las palabras podrían explicar.",
+
+      "Hay personas que llegan sin avisar y terminan quedándose en nuestros pensamientos.",
+
+      "Quizás algunas historias comienzan simplemente con una mirada.",
+
+      "Hay momentos pequeños que, sin saber por qué, terminan significándolo todo.",
+
+      "Una mirada puede durar solo unos segundos, pero quedarse en la memoria durante mucho tiempo.",
+
+      "Hay personas que hacen que una simple conversación se convierta en un recuerdo especial.",
+
+      "A veces no hace falta decir nada; una mirada puede decirlo todo.",
+
+      "Quizás lo bonito no sea saber qué pasará, sino disfrutar aquello que estamos sintiendo ahora.",
+
+      "Entre tantas personas, hay miradas que simplemente se sienten diferentes.",
+
+      "Algunas coincidencias parecen demasiado bonitas para ser solamente coincidencias."
+
+    ];
+
+
+    let ultimaFrase = -1;
+
 
     boton.addEventListener("click", () => {
 
+      let nuevaFrase;
+
+
+      /* Evita repetir inmediatamente
+         la misma frase */
+
+      do {
+
+        nuevaFrase =
+          Math.floor(
+            Math.random() * frases.length
+          );
+
+      } while (
+        nuevaFrase === ultimaFrase
+      );
+
+
+      ultimaFrase =
+        nuevaFrase;
+
+
+      /* Cambiar el texto */
+
       mensaje.textContent =
-        "¡Funciona! Tu página ya está lista para publicar 🚀";
+        frases[nuevaFrase];
+
+
+      /* Activar animación */
+
+      mensaje.classList.remove("mostrar");
+
+      corazon.classList.remove("mostrar");
+
+
+      setTimeout(() => {
+
+        mensaje.classList.add("mostrar");
+
+        corazon.classList.add("mostrar");
+
+      }, 50);
+
+
+      /* Cambiar texto del botón */
 
       boton.textContent =
-        "¡Todo listo (＾▽＾)!";
+        "♡ Descubrir otro ♡";
+
     });
+
   </script>
 
 </body>
