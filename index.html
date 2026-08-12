@@ -16,8 +16,6 @@
       --sage: #A8B58A;
       --misty: #A9B7C6;
       --midnight: #2D3A47;
-
-      --blanco: #FFFFFF;
     }
 
     * {
@@ -106,8 +104,7 @@
       border: 1px solid rgba(180, 106, 114, 0.25);
       border-radius: 30px;
 
-      background:
-        rgba(255, 247, 230, 0.88);
+      background: rgba(255, 247, 230, 0.88);
 
       box-shadow:
         0 24px 70px rgba(45, 58, 71, 0.16);
@@ -172,7 +169,7 @@
       color: var(--rosewood);
     }
 
-    /* DESCRIPCION */
+    /* DESCRIPCION EN CURSIVA */
 
     .descripcion {
       max-width: 560px;
@@ -180,6 +177,13 @@
       margin: 24px auto 30px;
 
       color: var(--midnight);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-style: italic;
 
       font-size: clamp(1rem, 2.5vw, 1.18rem);
 
@@ -259,7 +263,7 @@
       font-size: 0.86rem;
     }
 
-    /* PEQUEÑO DETALLE DECORATIVO */
+    /* DETALLES DECORATIVOS */
 
     main::before {
       content: "✿";
