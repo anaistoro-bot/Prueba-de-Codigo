@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -8,13 +9,15 @@
 
   <style>
     :root {
-      --fondo: #fff7e6;
-      --tarjeta: rgba(247, 200, 211);
-      --texto: #fa855a;
-      --suave: #69657d;
-      --morado: #c93638;
-      --celeste: #62c4da;
-      --borde: rgba(255, 222, 155);
+      /* PALETA DE COLORES */
+      --vanilla: #FFF7E6;
+      --blush: #F7C8D3;
+      --rosewood: #B46A72;
+      --sage: #A8B58A;
+      --misty: #A9B7C6;
+      --midnight: #2D3A47;
+
+      --blanco: #FFFFFF;
     }
 
     * {
@@ -28,13 +31,33 @@
       place-items: center;
       padding: 24px;
       overflow-x: hidden;
-      color: var(--texto);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      color: var(--midnight);
+
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
       background:
-        radial-gradient(circle at 10% 10%, rgba(55, 185, 218, 0.25), transparent 30%),
-        radial-gradient(circle at 90% 90%, rgba(109, 74, 255, 0.25), transparent 30%),
-        var(--fondo);
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(247, 200, 211, 0.75),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 90% 90%,
+          rgba(168, 181, 138, 0.55),
+          transparent 32%
+        ),
+        var(--vanilla);
     }
+
+    /* DECORACIONES */
 
     .decoracion {
       position: fixed;
@@ -42,147 +65,319 @@
       height: 230px;
       border-radius: 50%;
       filter: blur(2px);
-      opacity: 0.45;
+      opacity: 0.55;
       pointer-events: none;
     }
 
     .decoracion.uno {
       top: -95px;
       right: -70px;
-      background: linear-gradient(135deg, var(--morado), #b5a4ff);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--rosewood),
+          var(--blush)
+        );
     }
 
     .decoracion.dos {
       bottom: -120px;
       left: -70px;
-      background: linear-gradient(135deg, var(--celeste), #b7eff8);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--sage),
+          var(--misty)
+        );
     }
 
+    /* TARJETA PRINCIPAL */
+
     main {
+      position: relative;
       width: min(100%, 780px);
+
       padding: clamp(32px, 7vw, 70px);
+
       text-align: center;
-      border: 1px solid var(--borde);
+
+      border: 1px solid rgba(180, 106, 114, 0.25);
       border-radius: 30px;
-      background: var(--tarjeta);
-      box-shadow: 0 24px 70px rgba(50, 39, 110, 0.14);
+
+      background:
+        rgba(255, 247, 230, 0.88);
+
+      box-shadow:
+        0 24px 70px rgba(45, 58, 71, 0.16);
+
       backdrop-filter: blur(12px);
+
       animation: aparecer 700ms ease-out both;
     }
+
+    /* ETIQUETA */
 
     .etiqueta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+
       margin-bottom: 20px;
       padding: 8px 14px;
-      color: var(--morado);
+
+      color: var(--rosewood);
+
       font-size: 0.82rem;
       font-weight: 750;
+
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      border: 1px solid var(--borde);
+
+      border: 1px solid rgba(180, 106, 114, 0.28);
       border-radius: 999px;
-      background: #f8f6ff;
+
+      background: rgba(247, 200, 211, 0.45);
     }
+
+    /* PUNTO */
 
     .punto {
       width: 8px;
       height: 8px;
+
       border-radius: 50%;
-      background: #2acb91;
-      box-shadow: 0 0 0 4px rgba(42, 203, 145, 0.16);
+
+      background: var(--sage);
+
+      box-shadow:
+        0 0 0 4px rgba(168, 181, 138, 0.22);
     }
+
+    /* TITULO */
 
     h1 {
       margin: 0;
+
+      color: var(--midnight);
+
       font-size: clamp(2.6rem, 9vw, 5.7rem);
+
       line-height: 0.95;
       letter-spacing: -0.065em;
     }
 
     h1 span {
-      color: transparent;
-      background: linear-gradient(110deg, var(--morado), var(--celeste));
-      background-clip: text;
-      -webkit-background-clip: text;
+      color: var(--rosewood);
     }
+
+    /* DESCRIPCION */
 
     .descripcion {
       max-width: 560px;
+
       margin: 24px auto 30px;
-      color: var(--suave);
+
+      color: var(--midnight);
+
       font-size: clamp(1rem, 2.5vw, 1.18rem);
+
       line-height: 1.7;
     }
 
+    /* BOTON */
+
     button {
-      padding: 14px 22px;
-      color: white;
+      padding: 14px 24px;
+
+      color: var(--vanilla);
+
       font: inherit;
       font-weight: 750;
+
       border: 0;
       border-radius: 14px;
-      background: linear-gradient(110deg, var(--morado), #856bff);
-      box-shadow: 0 12px 24px rgba(109, 74, 255, 0.25);
+
+      background:
+        linear-gradient(
+          110deg,
+          var(--rosewood),
+          var(--midnight)
+        );
+
+      box-shadow:
+        0 12px 24px rgba(45, 58, 71, 0.22);
+
       cursor: pointer;
-      transition: transform 180ms ease, box-shadow 180ms ease;
+
+      transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease;
     }
 
     button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 16px 28px rgba(109, 74, 255, 0.32);
+
+      background:
+        linear-gradient(
+          110deg,
+          var(--midnight),
+          var(--rosewood)
+        );
+
+      box-shadow:
+        0 16px 28px rgba(45, 58, 71, 0.28);
     }
 
     button:active {
       transform: translateY(0);
     }
 
+    /* MENSAJE */
+
     #mensaje {
       min-height: 24px;
+
       margin: 18px 0 0;
-      color: var(--morado);
+
+      color: var(--rosewood);
+
       font-weight: 700;
     }
 
+    /* FOOTER */
+
     footer {
       margin-top: 32px;
-      color: #928ea3;
+
+      color: var(--midnight);
+
+      opacity: 0.65;
+
       font-size: 0.86rem;
     }
 
-    @keyframes aparecer {
-      from { opacity: 0; transform: translateY(18px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* PEQUEÑO DETALLE DECORATIVO */
+
+    main::before {
+      content: "✿";
+
+      position: absolute;
+
+      top: 22px;
+      right: 30px;
+
+      color: var(--rosewood);
+
+      font-size: 28px;
+
+      opacity: 0.55;
     }
 
+    main::after {
+      content: "✿";
+
+      position: absolute;
+
+      bottom: 20px;
+      left: 30px;
+
+      color: var(--sage);
+
+      font-size: 22px;
+
+      opacity: 0.55;
+    }
+
+    /* ANIMACION */
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ACCESIBILIDAD */
+
     @media (prefers-reduced-motion: reduce) {
-      main { animation: none; }
-      button { transition: none; }
+      main {
+        animation: none;
+      }
+
+      button {
+        transition: none;
+      }
+    }
+
+    /* CELULARES */
+
+    @media (max-width: 600px) {
+      body {
+        padding: 16px;
+      }
+
+      main {
+        padding: 42px 24px;
+        border-radius: 24px;
+      }
+
+      main::before {
+        top: 14px;
+        right: 18px;
+      }
+
+      main::after {
+        bottom: 14px;
+        left: 18px;
+      }
+
+      h1 {
+        font-size: 3.5rem;
+      }
     }
   </style>
 </head>
 
 <body>
+
   <div class="decoracion uno" aria-hidden="true"></div>
   <div class="decoracion dos" aria-hidden="true"></div>
 
   <main>
+
     <div class="etiqueta">
       <span class="punto"></span>
       Sitio publicado
     </div>
 
-    <h1>愛<span><3</span></h1>
+    <h1>
+      愛<span>&lt;3</span>
+    </h1>
 
     <p class="descripcion">
-     "Me perdí en su mirada, no eran ni azules, ni verdes. Eran color café, café que quita el sueño, café que produce desvelos".
+      "Me perdí en su mirada, no eran ni azules, ni verdes.
+      Eran color café, café que quita el sueño,
+      café que produce desvelos".
     </p>
 
-    <button id="boton" type="button">(＾▽＾)</button>
+    <button id="boton" type="button">
+      (＾▽＾)
+    </button>
+
     <p id="mensaje" aria-live="polite"></p>
 
-    <footer>Hecho con HTML, CSS y un poquito de JavaScript</footer>
+    <footer>
+      Hecho con HTML, CSS y un poquito de JavaScript
+    </footer>
+
   </main>
 
   <script>
@@ -190,9 +385,15 @@
     const mensaje = document.querySelector("#mensaje");
 
     boton.addEventListener("click", () => {
-      mensaje.textContent = "¡Funciona! Tu página ya está lista para publicar 🚀";
-      boton.textContent = "¡Todo listo (＾▽＾)!";
+
+      mensaje.textContent =
+        "¡Funciona! Tu página ya está lista para publicar 🚀";
+
+      boton.textContent =
+        "¡Todo listo (＾▽＾)!";
     });
   </script>
+
 </body>
 </html>
+```
