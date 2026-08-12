@@ -1,4 +1,4 @@
-
+```html
 <!doctype html>
 <html lang="es">
 <head>
@@ -7,10 +7,10 @@
 
   <meta
     name="description"
-    content="Una pequeña página llena de palabras y sentimientos."
+    content="Una pequeña página llena de palabras, sentimientos y recuerdos."
   >
 
-  <title>愛 &lt;3</title>
+  <title>愛 ♡</title>
 
   <style>
 
@@ -258,7 +258,7 @@
        ========================= */
 
     .subtexto {
-      max-width: 500px;
+      max-width: 540px;
 
       margin: 0 auto 30px;
 
@@ -271,9 +271,9 @@
 
       font-style: italic;
 
-      font-size: 0.98rem;
+      font-size: 1rem;
 
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
 
@@ -338,9 +338,9 @@
        ========================= */
 
     #mensaje {
-      min-height: 55px;
+      min-height: 60px;
 
-      max-width: 560px;
+      max-width: 570px;
 
       margin: 25px auto 0;
 
@@ -357,7 +357,7 @@
 
       font-size: 1.08rem;
 
-      line-height: 1.6;
+      line-height: 1.7;
 
       opacity: 0;
 
@@ -378,7 +378,7 @@
 
 
     /* =========================
-       CORAZÓN DECORATIVO
+       CORAZÓN
        ========================= */
 
     .corazon {
@@ -585,7 +585,7 @@
 
 
     <h1>
-      愛<span>&lt;♡</span>
+      愛<span>♡</span>
     </h1>
 
 
@@ -593,15 +593,29 @@
 
       "Me perdí en su mirada, no eran ni azules, ni verdes.
       Eran color café, café que quita el sueño,
-      café que produce desvelos". 
-      - Mario Benedetti
+      café que produce desvelos".
+
+      <br>
+
+      <small>- Mario Benedetti</small>
 
     </p>
 
 
     <p class="subtexto">
 
-    
+      El amor también vive en los pequeños detalles:
+      en una mirada inesperada, en una sonrisa sincera,
+      en las palabras que llegan justo cuando más se necesitan
+      y en esos recuerdos que, aunque pase el tiempo,
+      siguen teniendo un lugar especial.
+
+      <br><br>
+
+      Quizás lo más bonito de querer a alguien
+      no sea encontrar las palabras perfectas,
+      sino sentir que, por un instante,
+      el mundo parece un poquito más bonito.
 
     </p>
 
@@ -627,7 +641,7 @@
       aria-hidden="true">
 
       ♥
-      
+
     </div>
 
 
@@ -654,6 +668,10 @@
       document.querySelector("#corazon");
 
 
+    /* =========================
+       FRASES
+       ========================= */
+
     const frases = [
 
       "A veces una mirada dice mucho más de lo que las palabras podrían explicar.",
@@ -674,7 +692,39 @@
 
       "Entre tantas personas, hay miradas que simplemente se sienten diferentes.",
 
-      "Algunas coincidencias parecen demasiado bonitas para ser solamente coincidencias."
+      "Algunas coincidencias parecen demasiado bonitas para ser solamente coincidencias.",
+
+      "El amor se encuentra muchas veces en los detalles que parecen pequeños, pero significan muchísimo.",
+
+      "Hay recuerdos que el tiempo no borra, porque fueron escritos con sentimientos.",
+
+      "Quizás querer también significa guardar con cariño aquello que alguna vez nos hizo sonreír.",
+
+      "Hay sonrisas que aparecen en nuestra memoria justo cuando más las necesitamos.",
+
+      "A veces el corazón reconoce algo antes de que la razón consiga entenderlo.",
+
+      "Lo bonito de algunos momentos es que no necesitan ser perfectos para convertirse en inolvidables.",
+
+      "Hay palabras que se olvidan y sentimientos que permanecen.",
+
+      "Algunas personas llegan como una casualidad y terminan convirtiéndose en un recuerdo especial.",
+
+      "Que nunca falten las razones para sonreír, los motivos para soñar y las personas que hagan bonito el camino.",
+
+      "El amor también es desearle a alguien cosas bonitas, incluso en silencio.",
+
+      "Que la vida nos regale momentos sinceros, abrazos cálidos y recuerdos que valga la pena guardar.",
+
+      "A veces la felicidad aparece en los momentos más sencillos y sin pedir permiso.",
+
+      "Que nunca se pierda la ilusión de encontrar algo bonito en cada nuevo día.",
+
+      "Hay sentimientos que no necesitan explicación; simplemente se sienten.",
+
+      "Quizás lo más hermoso sea encontrar belleza en aquello que no esperábamos encontrar.",
+
+      "Que el cariño siempre encuentre una forma de hacerse presente, incluso en los pequeños detalles."
 
     ];
 
@@ -682,13 +732,19 @@
     let ultimaFrase = -1;
 
 
+    /* =========================
+       BOTÓN
+       ========================= */
+
     boton.addEventListener("click", () => {
 
       let nuevaFrase;
 
 
-      /* Evita repetir inmediatamente
-         la misma frase */
+      /*
+        Evita que aparezca
+        la misma frase dos veces seguidas.
+      */
 
       do {
 
@@ -706,13 +762,17 @@
         nuevaFrase;
 
 
-      /* Cambiar el texto */
+      /*
+        Cambiar el mensaje
+      */
 
       mensaje.textContent =
         frases[nuevaFrase];
 
 
-      /* Activar animación */
+      /*
+        Reiniciar animación
+      */
 
       mensaje.classList.remove("mostrar");
 
@@ -728,7 +788,9 @@
       }, 50);
 
 
-      /* Cambiar texto del botón */
+      /*
+        Cambiar el botón
+      */
 
       boton.textContent =
         "♡ Descubrir otro ♡";
@@ -739,4 +801,4 @@
 
 </body>
 </html>
-
+```
