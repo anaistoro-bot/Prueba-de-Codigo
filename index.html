@@ -228,7 +228,7 @@
 
 
     /* =========================
-       FRASE PRINCIPAL
+       FRASE ORIGINAL
        ========================= */
 
     .descripcion {
@@ -249,14 +249,23 @@
         clamp(1rem, 2.5vw, 1.18rem);
 
       line-height: 1.7;
+
+      transition:
+        opacity 500ms ease,
+        transform 500ms ease;
     }
 
-    .descripcion small {
-      display: block;
+    .descripcion.ocultar {
+      opacity: 0;
 
-      margin-top: 8px;
+      transform:
+        translateY(-15px);
 
-      font-size: 0.9rem;
+      height: 0;
+
+      margin: 0;
+
+      overflow: hidden;
     }
 
 
@@ -317,15 +326,13 @@
 
 
     /* =========================
-       MENSAJE SECRETO
+       FRASE INSPIRADORA
        ========================= */
 
     #mensaje {
-      min-height: 60px;
+      max-width: 650px;
 
-      max-width: 570px;
-
-      margin: 25px auto 0;
+      margin: 30px auto 0;
 
       padding: 0 10px;
 
@@ -338,18 +345,21 @@
 
       font-style: italic;
 
-      font-size: 1.08rem;
+      font-size:
+        clamp(1.35rem, 3.5vw, 2rem);
 
-      line-height: 1.7;
+      font-weight: 600;
+
+      line-height: 1.6;
 
       opacity: 0;
 
       transform:
-        translateY(8px);
+        translateY(15px);
 
       transition:
-        opacity 400ms ease,
-        transform 400ms ease;
+        opacity 500ms ease,
+        transform 500ms ease;
     }
 
     #mensaje.mostrar {
@@ -367,11 +377,11 @@
     .corazon {
       display: inline-block;
 
-      margin-top: 12px;
+      margin-top: 8px;
 
       color: var(--rosewood);
 
-      font-size: 22px;
+      font-size: 28px;
 
       opacity: 0;
 
@@ -408,7 +418,7 @@
 
 
     /* =========================
-       DETALLES DECORATIVOS
+       DECORACIONES
        ========================= */
 
     main::before {
@@ -533,6 +543,10 @@
         font-size: 3.5rem;
       }
 
+      #mensaje {
+        font-size: 1.35rem;
+      }
+
     }
 
   </style>
@@ -567,21 +581,31 @@
     </div>
 
 
+    <!-- ESTO APARECE DESDE EL COMIENZO -->
+
     <h1>
       愛<span>♡</span>
     </h1>
 
 
-    <p class="descripcion">
+    <!-- CITA ORIGINAL -->
+
+    <p
+      class="descripcion"
+      id="descripcion">
 
       "Me perdí en su mirada, no eran ni azules, ni verdes.
       Eran color café, café que quita el sueño,
       café que produce desvelos".
 
+      <br>
+
       <small>- Mario Benedetti</small>
 
     </p>
 
+
+    <!-- BOTÓN -->
 
     <button
       id="boton"
@@ -592,11 +616,15 @@
     </button>
 
 
+    <!-- FRASE INSPIRADORA -->
+
     <p
       id="mensaje"
       aria-live="polite">
     </p>
 
+
+    <!-- CORAZÓN -->
 
     <div
       id="corazon"
@@ -623,9 +651,17 @@
 
   <script>
 
-    const boton = document.querySelector("#boton");
-    const mensaje = document.querySelector("#mensaje");
-    const corazon = document.querySelector("#corazon");
+    const boton =
+      document.querySelector("#boton");
+
+    const mensaje =
+      document.querySelector("#mensaje");
+
+    const corazon =
+      document.querySelector("#corazon");
+
+    const descripcion =
+      document.querySelector("#descripcion");
 
 
     /* =========================
@@ -686,7 +722,7 @@
 
       "Que el cariño siempre encuentre una forma de hacerse presente, incluso en los pequeños detalles.",
 
-      "El amor también vive en los pequeños detalles: en una mirada inesperada, en una sonrisa sincera, en las palabras que llegan justo cuando más se necesitan y en esos recuerdos que, aunque pase el tiempo, siguen teniendo un lugar especial.",
+      "El amor también vive en los pequeños detalles: en una mirada inesperada, en una sonrisa sincera y en las palabras que llegan justo cuando más se necesitan.",
 
       "Quizás lo más bonito de querer a alguien no sea encontrar las palabras perfectas, sino sentir que, por un instante, el mundo parece un poquito más bonito.",
 
@@ -715,10 +751,6 @@
     ];
 
 
-    /* =========================
-       FRASE ANTERIOR
-       ========================= */
-
     let ultimaFrase = -1;
 
 
@@ -731,11 +763,7 @@
       let nuevaFrase;
 
 
-      /*
-        Elegir una frase al azar.
-        También evita repetir la misma
-        frase dos veces seguidas.
-      */
+      /* Elegir una frase aleatoria */
 
       do {
 
@@ -750,30 +778,35 @@
       );
 
 
-      ultimaFrase = nuevaFrase;
+      ultimaFrase =
+        nuevaFrase;
 
 
-      /*
-        Ocultar momentáneamente
-        el mensaje anterior.
-      */
+      /* =========================
+         PRIMER CLIC
+         ========================= */
+
+      if (!descripcion.classList.contains("ocultar")) {
+
+        descripcion.classList.add("ocultar");
+
+      }
+
+
+      /* Ocultar frase anterior */
 
       mensaje.classList.remove("mostrar");
+
       corazon.classList.remove("mostrar");
 
 
-      /*
-        Cambiar la frase.
-      */
+      /* Cambiar frase */
 
       mensaje.textContent =
         frases[nuevaFrase];
 
 
-      /*
-        Mostrar la nueva frase
-        con animación.
-      */
+      /* Mostrar nueva frase */
 
       setTimeout(() => {
 
@@ -784,9 +817,7 @@
       }, 50);
 
 
-      /*
-        Cambiar el texto del botón.
-      */
+      /* Cambiar botón */
 
       boton.textContent =
         "♡ Descubrir otro ♡";
